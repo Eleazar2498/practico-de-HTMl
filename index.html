@@ -5,346 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Global Academy - Feedback & Support</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            padding: 12px;
-            background: #101820;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #172b2b;
-            font-size: 12px;
-        }
-
-        .academy {
-            max-width: 1200px;
-            margin: auto;
-            background: #eaf5f3;
-            border: 1px solid #8aa9a7;
-        }
-
-        header {
-            min-height: 48px;
-            padding: 8px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            background: #f7fbfa;
-        }
-
-        .logo {
-            color: #145b58;
-            font-size: 17px;
-            font-weight: bold;
-        }
-
-        .search {
-            width: 40%;
-            max-width: 300px;
-            padding: 8px 12px;
-            border: 1px solid #c4d5d3;
-            border-radius: 20px;
-            background: #edf4f3;
-        }
-
-        .top-icons {
-            font-size: 16px;
-            white-space: nowrap;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            background: #12615e;
-        }
-
-        nav a {
-            padding: 12px 16px;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-        }
-
-        nav a:first-child {
-            background: #164947;
-            color: #ffbd58;
-        }
-
-        nav a:hover {
-            background: #24817d;
-        }
-
-        .layout {
-            display: grid;
-            grid-template-columns: 205px minmax(0, 1fr);
-            gap: 12px;
-            padding: 12px;
-        }
-
-        .panel {
-            border: 1px solid #43827e;
-            border-radius: 6px;
-            overflow: hidden;
-            background: white;
-        }
-
-        .panel-title {
-            margin: 0;
-            padding: 10px;
-            background: #2caaa4;
-            color: white;
-            font-size: 14px;
-            font-weight: normal;
-        }
-
-        .quick-links {
-            padding: 8px;
-        }
-
-        .quick-links a {
-            display: block;
-            margin-bottom: 10px;
-            padding: 14px 6px;
-            text-align: center;
-            text-decoration: none;
-            color: #172b2b;
-            border: 1px solid #91b2af;
-            border-radius: 5px;
-            background: #edf7f6;
-        }
-
-        .quick-links a:nth-child(2) {
-            background: #fff0dc;
-            border-color: #e6b477;
-        }
-
-        .content {
-            min-width: 0;
-        }
-
-        .welcome {
-            margin-bottom: 12px;
-        }
-
-        .welcome-banner {
-            min-height: 155px;
-            padding: 28px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            background:
-                linear-gradient(120deg, #174d4b, #337d78, #193c3d);
-        }
-
-        .welcome-banner h2 {
-            margin: 0 0 10px;
-            font-size: 25px;
-        }
-
-        .welcome-banner p {
-            max-width: 420px;
-            margin: 0;
-            line-height: 1.5;
-        }
-
-        .dashboard {
-            display: grid;
-            grid-template-columns: minmax(0, 1.7fr) minmax(210px, 1fr);
-            gap: 12px;
-        }
-
-        .orange-title {
-            margin: 0;
-            padding: 9px 10px;
-            background: #f69b3e;
-            color: #171717;
-            font-size: 14px;
-            font-weight: normal;
-        }
-
-        .table-wrap {
-            padding: 7px;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 11px;
-        }
-
-        th, td {
-            border: 1px solid #8daaa7;
-            padding: 6px;
-            text-align: left;
-        }
-
-        th {
-            background: #28615e;
-            color: white;
-        }
-
-        tbody tr:nth-child(odd) {
-            background: #dcefed;
-        }
-
-        .status {
-            background: #d2eadb;
-        }
-
-        .reading-list {
-            padding: 8px;
-        }
-
-        .reading {
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #8daaa7;
-            border-radius: 6px;
-            background: white;
-        }
-
-        .reading h3 {
-            margin: 0 0 6px;
-            font-size: 13px;
-        }
-
-        .reading p {
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        .feedback {
-            margin: 0 12px 12px;
-        }
-
-        .feedback .panel-title {
-            background: #2caaa4;
-        }
-
-        .form-content {
-            padding: 12px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .field {
-            margin-bottom: 12px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        select,
-        textarea {
-            display: block;
-            width: 100%;
-            padding: 9px;
-            border: 1px solid #8daaa7;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 12px;
-            background: #fff;
-        }
-
-        textarea {
-            min-height: 110px;
-            resize: vertical;
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            outline: 2px solid #2caaa4;
-            outline-offset: 1px;
-        }
-
-        button {
-            padding: 8px 18px;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            background: #f69b3e;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #df8128;
-        }
-
-        footer {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 16px;
-            color: white;
-            background: #12615e;
-        }
-
-        footer a {
-            color: white;
-            margin-right: 16px;
-            text-decoration: none;
-        }
-
-        @media (max-width: 750px) {
-            body {
-                padding: 5px;
-            }
-
-            .layout {
-                grid-template-columns: 1fr;
-            }
-
-            .quick-links {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-
-            .quick-links a {
-                margin: 0;
-            }
-
-            .dashboard {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-
-            .search {
-                display: none;
-            }
-
-            nav a {
-                padding: 10px 7px;
-            }
-        }
-    </style>
 </head>
 
 <body>
+
     <div class="academy">
 
         <header>
@@ -365,6 +29,7 @@
 
             <aside class="panel">
                 <h2 class="panel-title">QUICK ACCESS</h2>
+
                 <div class="quick-links">
                     <a href="#announcements">Announcements</a>
                     <a href="#calendar">Calendar Events</a>
@@ -377,6 +42,7 @@
 
                 <section class="panel welcome">
                     <h2 class="panel-title">LEARNING HUB</h2>
+
                     <div class="welcome-banner">
                         <h2>WELCOME BACK</h2>
                         <p>
@@ -391,6 +57,7 @@
 
                     <section class="panel" id="courses">
                         <h2 class="orange-title">COURSE SCHEDULE</h2>
+
                         <div class="table-wrap">
                             <table>
                                 <thead>
@@ -402,6 +69,7 @@
                                         <th>Status</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     <tr>
                                         <td>Module 1</td>
@@ -410,6 +78,7 @@
                                         <td>8/12/2024</td>
                                         <td class="status">Complete</td>
                                     </tr>
+
                                     <tr>
                                         <td>Module 1</td>
                                         <td>Exploratory Learning</td>
@@ -417,6 +86,7 @@
                                         <td>3/11/2024</td>
                                         <td class="status">Complete</td>
                                     </tr>
+
                                     <tr>
                                         <td>Module 1</td>
                                         <td>Summary Learning</td>
@@ -424,6 +94,7 @@
                                         <td>1/12/2024</td>
                                         <td class="status">Complete</td>
                                     </tr>
+
                                     <tr>
                                         <td>Module 2</td>
                                         <td>Student Schedule</td>
@@ -431,6 +102,7 @@
                                         <td>8/12/2024</td>
                                         <td class="status">Success</td>
                                     </tr>
+
                                     <tr>
                                         <td>Module 2</td>
                                         <td>Developmental Learning</td>
@@ -438,6 +110,7 @@
                                         <td>7/12/2024</td>
                                         <td class="status">Success</td>
                                     </tr>
+
                                     <tr>
                                         <td>Module 2</td>
                                         <td>Social Learning &amp; Design</td>
@@ -445,6 +118,7 @@
                                         <td>8/12/2024</td>
                                         <td>Plan</td>
                                     </tr>
+
                                     <tr>
                                         <td>Module 3</td>
                                         <td>Summary Schedule</td>
@@ -452,6 +126,7 @@
                                         <td>8/13/2024</td>
                                         <td>Plan</td>
                                     </tr>
+
                                     <tr>
                                         <td>Module 3</td>
                                         <td>Student Learning</td>
@@ -459,6 +134,7 @@
                                         <td>9/12/2024</td>
                                         <td class="status">Complete</td>
                                     </tr>
+
                                     <tr>
                                         <td>Module 3</td>
                                         <td>Complete Learning</td>
@@ -466,6 +142,7 @@
                                         <td>9/12/2024</td>
                                         <td class="status">Success</td>
                                     </tr>
+
                                     <tr>
                                         <td>Module 3</td>
                                         <td>Developmental Learning</td>
@@ -480,7 +157,9 @@
 
                     <section class="panel" id="resources">
                         <h2 class="orange-title">RECOMMENDED READING</h2>
+
                         <div class="reading-list">
+
                             <article class="reading">
                                 <h3>Recommended Articles</h3>
                                 <p>
@@ -507,11 +186,13 @@
                                     of topics.
                                 </p>
                             </article>
+
                         </div>
                     </section>
 
                 </div>
             </main>
+
         </div>
 
         <section class="panel feedback" id="support">
@@ -521,6 +202,7 @@
                 <form action="#" method="get">
 
                     <div class="form-row">
+
                         <div class="field">
                             <label for="subject">Subject</label>
                             <input
@@ -533,6 +215,7 @@
 
                         <div class="field">
                             <label for="category">Category</label>
+
                             <select
                                 id="category"
                                 name="category"
@@ -545,6 +228,7 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
+
                     </div>
 
                     <div class="field">
@@ -569,9 +253,11 @@
                 <a href="#terms">Terms of Use</a>
                 <a href="#contact">Contact</a>
             </div>
+
             <div>© 2024 GLOBAL ACADEMY</div>
         </footer>
 
     </div>
+
 </body>
 </html>
